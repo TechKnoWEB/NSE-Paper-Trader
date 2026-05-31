@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "nse-paper-trader-backend"
+version = "0.1.0"
+description = "NSE Paper Trader - Backend API server"
+authors = ["NSE Paper Trader Team"]
+readme = "README.md"
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = { version = ">=0.115.0", extras = ["standard"] }
+uvicorn = { version = ">=0.32.0", extras = ["standard"] }
+sqlalchemy = { version = ">=2.0.36", extras = ["asyncio"] }
+asyncpg = ">=0.30.0"
+alembic = ">=1.14.0"
+redis = { version = ">=5.2.0", extras = ["hiredis"] }
+pydantic = { version = ">=2.10.0", extras = ["email"] }
+pydantic-settings = ">=2.6.0"
+python-jose = { version = ">=3.3.0", extras = ["cryptography"] }
+dhanhq = ">=0.1.0"
+apscheduler = ">=3.10.4"
+websockets = ">=14.1"
+httpx = ">=0.28.0"
+python-multipart = ">=0.0.18"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.3.0"
+pytest-asyncio = ">=0.24.0"
+freezegun = ">=1.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
